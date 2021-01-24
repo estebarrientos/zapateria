@@ -1,0 +1,17 @@
+C:\Users\esteb\source\repos\cDatos\bin\Debug\cDatos.dll
+C:\Users\esteb\source\repos\cDatos\bin\Debug\cDatos.pdb
+C:\Users\esteb\source\repos\cDatos\bin\Debug\cEntidad.dll
+C:\Users\esteb\source\repos\cDatos\bin\Debug\cEntidad.pdb
+C:\Users\esteb\source\repos\cDatos\obj\Debug\cDatos.csprojAssemblyReference.cache
+C:\Users\esteb\source\repos\cDatos\obj\Debug\cDatos.csproj.CoreCompileInputs.cache
+C:\Users\esteb\source\repos\cDatos\obj\Debug\cDatos.csproj.CopyComplete
+C:\Users\esteb\source\repos\cDatos\obj\Debug\cDatos.dll
+C:\Users\esteb\source\repos\cDatos\obj\Debug\cDatos.pdb
+C:\Users\esteb\source\repos\cDatos\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\esteb\source\repos\cDatos\bin\Debug\System.Security.AccessControl.dll
+C:\Users\esteb\source\repos\cDatos\bin\Debug\System.Security.Permissions.dll
+C:\Users\esteb\source\repos\cDatos\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\esteb\source\repos\cDatos\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\esteb\source\repos\cDatos\bin\Debug\System.Security.AccessControl.xml
+C:\Users\esteb\source\repos\cDatos\bin\Debug\System.Security.Permissions.xml
+C:\Users\esteb\source\repos\cDatos\bin\Debug\System.Security.Principal.Windows.xml
