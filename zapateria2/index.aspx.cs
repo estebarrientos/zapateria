@@ -15,15 +15,7 @@ namespace zapateria2
         ClaseNegocio negocio = new ClaseNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            ClaseEntidad zapato = new ClaseEntidad();
-            zapato.Id = 5;
-            zapato.Marca = "Adidas";
-            zapato.Tipo = "deportivo";
-            zapato.Genero = "masculino";
-            zapato.Cantidad_disponible = 10;
-            zapato.Precio = 4000;
-            negocio.buscarZapato(5);
+            
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -41,8 +33,16 @@ namespace zapateria2
                 {
                     DataRow fila = zapatoBuscado.Rows[0];
                     txtMarca.Text = fila["marca"].ToString();
-                    txtTipo.Text = fila["tipo"].ToString();
-                    txtGenero.Text = fila["genero"].ToString();
+                    listadoTipo.SelectedValue = fila["tipo"].ToString();
+                    String genero = fila["genero"].ToString();
+                    if (genero.Equals("Masculino"))
+                    {
+                        opcionGenero.SelectedValue = "1";
+                    }
+                    else
+                    {
+                        opcionGenero.SelectedValue = "2";
+                    }
                     txtCantidad.Text = fila["cantidad_disponible"].ToString();
                     Double precio = Double.Parse(fila["precio"].ToString());
                     txtPrecio.Text = precio.ToString();
@@ -57,8 +57,6 @@ namespace zapateria2
                 else
                 {
                     txtMarca.Text = "";
-                    txtTipo.Text = "";
-                    txtGenero.Text = "";
                     txtCantidad.Text = "";
                     txtPrecio.Text = "";
                     lblValidacion.Text = "";
@@ -70,24 +68,14 @@ namespace zapateria2
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtId.Text = "";
-            txtMarca.Text = "";
-            txtTipo.Text = "";
-            txtGenero.Text = "";
-            txtCantidad.Text = "";
-            txtPrecio.Text = "";
             lblRespuesta.Text = "Campos limpiados";
             lblValidacion.Text = "";
-            btnModificar.Enabled = false;
-            btnGuardar.Enabled = true;
-            btnBuscar.Enabled = true;
-            btnEliminar.Enabled = false;
-            txtId.Enabled = true;
+            limpiarCampos();
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtMarca.Text.Equals("") || txtTipo.Text.Equals("") || txtGenero.Text.Equals("") || txtCantidad.Text.Equals("") || txtPrecio.Text.Equals(""))
+            if (txtMarca.Text.Equals("") || txtCantidad.Text.Equals("") || txtPrecio.Text.Equals(""))
             {
                 lblValidacion.Text = "Error al guardar, faltan campos por ingresar.";
                 lblRespuesta.Text = "";
@@ -96,31 +84,29 @@ namespace zapateria2
             {
                 ClaseEntidad zapatoIngresar = new ClaseEntidad();
                 zapatoIngresar.Marca = txtMarca.Text;
-                zapatoIngresar.Tipo = txtTipo.Text;
-                zapatoIngresar.Genero = txtGenero.Text;
+                zapatoIngresar.Tipo = listadoTipo.SelectedValue;
+                if (opcionGenero.SelectedValue.Equals("1"))
+                {
+                    zapatoIngresar.Genero = "Masculino";
+                }
+                else
+                {
+                    zapatoIngresar.Genero = "Femenino";
+                }
+
                 zapatoIngresar.Cantidad_disponible = int.Parse(txtCantidad.Text);
                 zapatoIngresar.Precio = double.Parse(txtPrecio.Text);
                 bool ingresoExitoso = negocio.guardar_zapato(zapatoIngresar);
                 if (ingresoExitoso)
                 {
                     lblRespuesta.Text = "Zapatos registrados correctamente";
-                    txtId.Text = "";
-                    txtMarca.Text = "";
-                    txtTipo.Text = "";
-                    txtGenero.Text = "";
-                    txtCantidad.Text = "";
-                    txtPrecio.Text = "";
                     lblValidacion.Text = "";
-                    btnModificar.Enabled = false;
-                    btnGuardar.Enabled = true;
-                    btnBuscar.Enabled = true;
-                    btnEliminar.Enabled = false;
-                    txtId.Enabled = true;
-                    GridView1.DataBind();
+                    limpiarCampos();
                 }
                 else
                 {
                     lblValidacion.Text = "ha ocurrido un error registrando los zapatos";
+                    lblRespuesta.Text = "";
                 }
             }
 
@@ -135,17 +121,7 @@ namespace zapateria2
             {
                 lblRespuesta.Text = "Zapatos eliminados con exito";
                 lblValidacion.Text = "";
-                btnEliminar.Enabled = false;
-                btnModificar.Enabled = false;
-                btnBuscar.Enabled = true;
-                btnGuardar.Enabled = true;
-                txtId.Text = "";
-                txtMarca.Text = "";
-                txtTipo.Text = "";
-                txtGenero.Text = "";
-                txtCantidad.Text = "";
-                txtPrecio.Text = "";
-                GridView1.DataBind();
+                limpiarCampos();
             }
             else
             {
@@ -156,7 +132,7 @@ namespace zapateria2
 
         protected void btnModificar_Click(object sender, EventArgs e)
         {
-            if (txtMarca.Text.Equals("") || txtTipo.Text.Equals("") || txtGenero.Text.Equals("") || txtCantidad.Text.Equals("") || txtPrecio.Text.Equals(""))
+            if (txtMarca.Text.Equals("") || txtCantidad.Text.Equals("") || txtPrecio.Text.Equals(""))
             {
                 lblValidacion.Text = "Error al guardar, faltan campos por ingresar.";
                 lblRespuesta.Text = "";
@@ -166,27 +142,26 @@ namespace zapateria2
                 ClaseEntidad zapatos = new ClaseEntidad();
                 zapatos.Id = int.Parse(txtId.Text);
                 zapatos.Marca = txtMarca.Text;
-                zapatos.Tipo = txtTipo.Text;
-                zapatos.Genero = txtGenero.Text;
+                zapatos.Tipo = listadoTipo.SelectedValue;
                 zapatos.Cantidad_disponible = int.Parse(txtCantidad.Text);
                 zapatos.Precio = double.Parse(txtPrecio.Text);
-                bool actualizado = negocio.actualizar_zapa(zapatos);
 
+                if (opcionGenero.SelectedValue.Equals("1"))
+                {
+                    zapatos.Genero = "Masculino";
+                }
+                else
+                {
+                    zapatos.Genero = "Femenino";
+                }
+
+                bool actualizado = negocio.actualizar_zapa(zapatos);
+      
                 if (actualizado)
                 {
                     lblRespuesta.Text = "Zapatos modificados correctamente.";
                     lblValidacion.Text = "";
-                    btnEliminar.Enabled = false;
-                    btnModificar.Enabled = false;
-                    btnBuscar.Enabled = true;
-                    btnGuardar.Enabled = true;
-                    txtId.Text = "";
-                    txtMarca.Text = "";
-                    txtTipo.Text = "";
-                    txtGenero.Text = "";
-                    txtCantidad.Text = "";
-                    txtPrecio.Text = "";
-                    GridView1.DataBind();
+                    limpiarCampos();
 
                 }
                 else
@@ -195,6 +170,21 @@ namespace zapateria2
                     lblRespuesta.Text = "";
                 }
             }
+        }
+
+        public void limpiarCampos()
+        {
+            txtId.Enabled = true;
+            btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnBuscar.Enabled = true;
+            btnGuardar.Enabled = true;
+            txtId.Text = "";
+            txtMarca.Text = "";
+            txtCantidad.Text = "";
+            txtPrecio.Text = "";
+            GridView1.DataBind();
+
         }
     }
 }

@@ -42,22 +42,22 @@ namespace zapateria2
         protected global::System.Web.UI.WebControls.TextBox txtMarca;
 
         /// <summary>
-        /// Control txtTipo.
+        /// Control listadoTipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipo;
+        protected global::System.Web.UI.WebControls.DropDownList listadoTipo;
 
         /// <summary>
-        /// Control txtGenero.
+        /// Control opcionGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGenero;
+        protected global::System.Web.UI.WebControls.DropDownList opcionGenero;
 
         /// <summary>
         /// Control txtCantidad.

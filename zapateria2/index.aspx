@@ -36,20 +36,31 @@
             </div>
             <div class="row mt-4 justify-content-center">
                 <div class="col-md-2">
-                    <h5 class="text-center mb-4">Id:</h5>
+                    <h5 class="text-center mb-5">Id:</h5>
                     <h5 class="text-center mb-4">Marca:</h5>
-                    <h5 class="text-center mb-3">Tipo:</h5>
+                    <h5 class="text-center mb-4">Tipo:</h5>
                     <h5 class="text-center mb-4">Genero:</h5>
                     <h5 class="text-center mb-4">Cantidad:</h5>
                     <h5 class="text-center">Precio:</h5>
                 </div>
-                <div class="col-md-2">
-                    <asp:TextBox ID="txtId" runat="server" TextMode="Number" CssClass="mb-3 col-12"></asp:TextBox>
-                    <asp:TextBox ID="txtMarca" runat="server" CssClass="mb-3 col-12"></asp:TextBox>
-                    <asp:TextBox ID="txtTipo" runat="server" CssClass="mb-3 col-12"></asp:TextBox>
-                    <asp:TextBox ID="txtGenero" runat="server" CssClass="mb-3 col-12"></asp:TextBox>
-                    <asp:TextBox ID="txtCantidad" runat="server" TextMode="Number" CssClass="mb-3 col-12"></asp:TextBox>
-                    <asp:TextBox ID="txtPrecio" runat="server" AutoCompleteType="Enabled" CssClass="col-12" TextMode="Number" ToolTip="Ingrese un precio"></asp:TextBox>
+                <div class="col-md-2 mb-1">
+                    <asp:TextBox ID="txtId" runat="server" TextMode="Number" CssClass="mb-4 col-12 form-control" placeholder="Ingrese el id"></asp:TextBox>
+                    <asp:TextBox ID="txtMarca" runat="server" CssClass="mb-3 col-12 form-control mt-3" placeholder="ingrese la marca"></asp:TextBox>
+                    <asp:DropDownList ID="listadoTipo" runat="server" CssClass="form-select">
+                        <asp:ListItem>Deportivo</asp:ListItem>
+                        <asp:ListItem>Botas</asp:ListItem>
+                        <asp:ListItem>Bailarinas</asp:ListItem>
+                        <asp:ListItem>Desert</asp:ListItem>
+                        <asp:ListItem>Sneakers</asp:ListItem>
+                        <asp:ListItem>Scarpines</asp:ListItem>
+                        <asp:ListItem>Mocasin</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:DropDownList ID="opcionGenero" runat="server" CssClass="form-select mb-2 mt-2">
+                        <asp:ListItem Value="1">Masculino</asp:ListItem>
+                        <asp:ListItem Value="2">Femenino</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:TextBox ID="txtCantidad" runat="server" TextMode="Number" CssClass="mb-2 col-12 form-control" placeholder="ingrese la cantidad"></asp:TextBox>
+                    <asp:TextBox ID="txtPrecio" runat="server" AutoCompleteType="Enabled" CssClass="col-12 form-control" TextMode="Number" ToolTip="Ingrese un precio" placeholder="Ingrese un precio"></asp:TextBox>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -87,6 +98,8 @@
                         <RowStyle HorizontalAlign="Center" BorderStyle="Dotted" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:zapateriaConnectionString2 %>" SelectCommand="SELECT * FROM [zapatos]" DeleteCommand="DELETE FROM zapatos"></asp:SqlDataSource>
+                    
+                    
                     
                 </div>
             </div>

@@ -21,6 +21,7 @@ namespace cDatos
             {
                 SqlCommand ocmd = new SqlCommand("agregar_zapatos", oconexion.conectar("conexionBD"));
                 ocmd.CommandType = CommandType.StoredProcedure;
+
                 ocmd.Parameters.Add("@marca", oZapato.Marca);
                 ocmd.Parameters.Add("@tipo", oZapato.Tipo);
                 ocmd.Parameters.Add("@genero", oZapato.Genero);
