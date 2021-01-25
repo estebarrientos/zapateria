@@ -32,6 +32,11 @@ namespace cNegocio
         {
             return CP.guardar_zapato(zapato);
         }
+
+        public DataTable buscarZapato(int id)
+        {
+            return CP.buscarZapatos(id);
+        }
             
 
 

@@ -91,8 +91,16 @@ namespace cDatos
 
         }
 
-
-
+        public DataTable buscarZapatos(int id)
+        {
+            SqlCommand cmd = new SqlCommand("buscar_zapatos", oconexion.conectar("conexionBD"));
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@id", id);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
 
     }
 }
