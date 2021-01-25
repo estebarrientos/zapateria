@@ -57,7 +57,7 @@
                     <p class="text-center">
                         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="mr-2 btn btn-dark" OnClick="btnGuardar_Click" />
                         <asp:Button ID="btnModificar" runat="server" Text="Modificar" CssClass="mr-2 btn btn-dark" Enabled="False"/>
-                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="mr-2 btn btn-dark" Enabled="False"/>
+                        <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="mr-2 btn btn-dark" Enabled="False" OnClick="btnEliminar_Click"/>
                         <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="mr-2 btn btn-dark" OnClick="btnBuscar_Click"/>
                         <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn btn-dark" OnClick="btnLimpiar_Click" />
                     </p>
@@ -67,6 +67,27 @@
                 <div class="col-md-12">
                     <p class="text-center text-danger"><strong><asp:Label ID="lblValidacion" runat="server"></asp:Label></strong></p>
                     <p class="text-center text-success"><strong><asp:Label ID="lblRespuesta" runat="server"></asp:Label></strong></p>
+                </div>
+            </div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-12 mb-5">
+                    
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="Double" CellPadding="20" CellSpacing="20" DataKeyNames="id" DataSourceID="SqlDataSource1" Font-Bold="True" Font-Overline="False" HorizontalAlign="Center">
+                        <Columns>
+                            <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id">
+                            <HeaderStyle BorderStyle="Ridge" />
+                            </asp:BoundField>
+                            <asp:BoundField DataField="marca" HeaderText="marca" SortExpression="marca" />
+                            <asp:BoundField DataField="tipo" HeaderText="tipo" SortExpression="tipo" />
+                            <asp:BoundField DataField="genero" HeaderText="genero" SortExpression="genero" />
+                            <asp:BoundField DataField="cantidad_disponible" HeaderText="Cantidad" SortExpression="Cantidad" />
+                            <asp:BoundField DataField="precio" HeaderText="precio" SortExpression="precio" />
+                        </Columns>
+                        <HeaderStyle BorderStyle="Solid" CssClass="bg-dark" ForeColor="White" HorizontalAlign="Center" Wrap="False" />
+                        <RowStyle HorizontalAlign="Center" BorderStyle="Dotted" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:zapateriaConnectionString2 %>" SelectCommand="SELECT * FROM [zapatos]" DeleteCommand="DELETE FROM zapatos"></asp:SqlDataSource>
+                    
                 </div>
             </div>
         </div>

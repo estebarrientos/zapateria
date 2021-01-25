@@ -46,7 +46,7 @@ namespace zapateria2
                     txtCantidad.Text = fila["cantidad_disponible"].ToString();
                     Double precio = Double.Parse(fila["precio"].ToString());
                     txtPrecio.Text = precio.ToString();
-                    lblRespuesta.Text = "Zapato Encontrado";
+                    lblRespuesta.Text = "Zapatos Encontrados";
                     lblValidacion.Text = "";
                     btnModificar.Enabled = true;
                     btnEliminar.Enabled = true;
@@ -62,7 +62,7 @@ namespace zapateria2
                     txtCantidad.Text = "";
                     txtPrecio.Text = "";
                     lblValidacion.Text = "";
-                    lblValidacion.Text = "Zapato con id " + txtId.Text + " no encontrado";
+                    lblValidacion.Text = "Zapatos con id " + txtId.Text + " no encontrados";
                     lblRespuesta.Text = "";
                 }
             }
@@ -116,6 +116,7 @@ namespace zapateria2
                     btnBuscar.Enabled = true;
                     btnEliminar.Enabled = false;
                     txtId.Enabled = true;
+                    GridView1.DataBind();
                 }
                 else
                 {
@@ -126,5 +127,31 @@ namespace zapateria2
         }
 
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            bool respuesta = negocio.eliminar_zapatos(int.Parse(txtId.Text));
+
+            if (respuesta)
+            {
+                lblRespuesta.Text = "Zapatos eliminados con exito";
+                lblValidacion.Text = "";
+                btnEliminar.Enabled = false;
+                btnModificar.Enabled = false;
+                btnBuscar.Enabled = true;
+                btnGuardar.Enabled = true;
+                txtId.Text = "";
+                txtMarca.Text = "";
+                txtTipo.Text = "";
+                txtGenero.Text = "";
+                txtCantidad.Text = "";
+                txtPrecio.Text = "";
+                GridView1.DataBind();
+            }
+            else
+            {
+                lblValidacion.Text = "Error al intentar eliminar";
+                lblRespuesta.Text = "";
+            }
+        }
     }
 }
