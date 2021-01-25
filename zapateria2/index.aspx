@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Gestion de zapatos</title>
@@ -31,17 +32,17 @@
         <div class="container-fluid">
             <div class="row justify-content-center mt-5">
                 <div class="col-md-8 mt-5">
-                    <h1 class="text-dark text-center text-capitalize"><strong> Gestion de Zapatos</strong></h1> 
+                    <h1 class="text-dark text-center text-capitalize"><i class="bi bi-cart-fill"></i><strong> Gestion de Zapatos</strong></h1> 
                 </div>
             </div>
             <div class="row mt-4 justify-content-center">
                 <div class="col-md-2">
-                    <h5 class="text-center mb-5">Id:</h5>
-                    <h5 class="text-center mb-4">Marca:</h5>
-                    <h5 class="text-center mb-4">Tipo:</h5>
-                    <h5 class="text-center mb-4">Genero:</h5>
-                    <h5 class="text-center mb-4">Cantidad:</h5>
-                    <h5 class="text-center">Precio:</h5>
+                    <h5 class="text-center mb-5"><i class="bi bi-heart-fill"></i> Id:</h5>
+                    <h5 class="text-center mb-4"><i class="bi bi-heart-fill"></i> Marca:</h5>
+                    <h5 class="text-center mb-4"><i class="bi bi-heart-fill"></i> Tipo:</h5>
+                    <h5 class="text-center mb-4"><i class="bi bi-heart-fill"></i> Genero:</h5>
+                    <h5 class="text-center mb-4"><i class="bi bi-heart-fill"></i> Cantidad:</h5>
+                    <h5 class="text-center"><i class="bi bi-heart-fill"></i> Precio:</h5>
                 </div>
                 <div class="col-md-2 mb-1">
                     <asp:TextBox ID="txtId" runat="server" TextMode="Number" CssClass="mb-4 col-12 form-control" placeholder="Ingrese el id"></asp:TextBox>
@@ -55,11 +56,11 @@
                         <asp:ListItem>Scarpines</asp:ListItem>
                         <asp:ListItem>Mocasin</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:DropDownList ID="opcionGenero" runat="server" CssClass="form-select mb-2 mt-2">
+                    <asp:DropDownList ID="opcionGenero" runat="server" CssClass="form-select mb-3 mt-2">
                         <asp:ListItem Value="1">Masculino</asp:ListItem>
                         <asp:ListItem Value="2">Femenino</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:TextBox ID="txtCantidad" runat="server" TextMode="Number" CssClass="mb-2 col-12 form-control" placeholder="ingrese la cantidad"></asp:TextBox>
+                    <asp:TextBox ID="txtCantidad" runat="server" TextMode="Number" CssClass="mb-3 col-12 form-control" placeholder="ingrese la cantidad"></asp:TextBox>
                     <asp:TextBox ID="txtPrecio" runat="server" AutoCompleteType="Enabled" CssClass="col-12 form-control" TextMode="Number" ToolTip="Ingrese un precio" placeholder="Ingrese un precio"></asp:TextBox>
                 </div>
             </div>
