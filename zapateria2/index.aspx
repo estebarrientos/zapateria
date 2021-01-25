@@ -56,7 +56,7 @@
                 <div class="col-md-8 mt-3">
                     <p class="text-center">
                         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="mr-2 btn btn-dark" OnClick="btnGuardar_Click" />
-                        <asp:Button ID="btnModificar" runat="server" Text="Modificar" CssClass="mr-2 btn btn-dark" Enabled="False"/>
+                        <asp:Button ID="btnModificar" runat="server" Text="Modificar" CssClass="mr-2 btn btn-dark" Enabled="False" OnClick="btnModificar_Click"/>
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="mr-2 btn btn-dark" Enabled="False" OnClick="btnEliminar_Click"/>
                         <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="mr-2 btn btn-dark" OnClick="btnBuscar_Click"/>
                         <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn btn-dark" OnClick="btnLimpiar_Click" />

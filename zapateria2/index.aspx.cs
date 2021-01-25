@@ -153,5 +153,48 @@ namespace zapateria2
                 lblRespuesta.Text = "";
             }
         }
+
+        protected void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (txtMarca.Text.Equals("") || txtTipo.Text.Equals("") || txtGenero.Text.Equals("") || txtCantidad.Text.Equals("") || txtPrecio.Text.Equals(""))
+            {
+                lblValidacion.Text = "Error al guardar, faltan campos por ingresar.";
+                lblRespuesta.Text = "";
+            }
+            else
+            {
+                ClaseEntidad zapatos = new ClaseEntidad();
+                zapatos.Id = int.Parse(txtId.Text);
+                zapatos.Marca = txtMarca.Text;
+                zapatos.Tipo = txtTipo.Text;
+                zapatos.Genero = txtGenero.Text;
+                zapatos.Cantidad_disponible = int.Parse(txtCantidad.Text);
+                zapatos.Precio = double.Parse(txtPrecio.Text);
+                bool actualizado = negocio.actualizar_zapa(zapatos);
+
+                if (actualizado)
+                {
+                    lblRespuesta.Text = "Zapatos modificados correctamente.";
+                    lblValidacion.Text = "";
+                    btnEliminar.Enabled = false;
+                    btnModificar.Enabled = false;
+                    btnBuscar.Enabled = true;
+                    btnGuardar.Enabled = true;
+                    txtId.Text = "";
+                    txtMarca.Text = "";
+                    txtTipo.Text = "";
+                    txtGenero.Text = "";
+                    txtCantidad.Text = "";
+                    txtPrecio.Text = "";
+                    GridView1.DataBind();
+
+                }
+                else
+                {
+                    lblValidacion.Text = "Error al modificar los zapatos";
+                    lblRespuesta.Text = "";
+                }
+            }
+        }
     }
 }
