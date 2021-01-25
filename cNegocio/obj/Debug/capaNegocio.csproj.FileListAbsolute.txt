@@ -1,0 +1,11 @@
+C:\xampp\.vs\htdocs\zapateria\cNegocio\bin\Debug\cNegocio.dll
+C:\xampp\.vs\htdocs\zapateria\cNegocio\bin\Debug\cNegocio.pdb
+C:\xampp\.vs\htdocs\zapateria\cNegocio\bin\Debug\cDatos.dll
+C:\xampp\.vs\htdocs\zapateria\cNegocio\bin\Debug\cEntidad.dll
+C:\xampp\.vs\htdocs\zapateria\cNegocio\bin\Debug\cDatos.pdb
+C:\xampp\.vs\htdocs\zapateria\cNegocio\bin\Debug\cEntidad.pdb
+C:\xampp\.vs\htdocs\zapateria\cNegocio\obj\Debug\capaNegocio.csprojAssemblyReference.cache
+C:\xampp\.vs\htdocs\zapateria\cNegocio\obj\Debug\capaNegocio.csproj.CoreCompileInputs.cache
+C:\xampp\.vs\htdocs\zapateria\cNegocio\obj\Debug\capaNegocio.csproj.CopyComplete
+C:\xampp\.vs\htdocs\zapateria\cNegocio\obj\Debug\cNegocio.dll
+C:\xampp\.vs\htdocs\zapateria\cNegocio\obj\Debug\cNegocio.pdb

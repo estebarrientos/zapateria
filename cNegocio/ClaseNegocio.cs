@@ -19,7 +19,7 @@ namespace cNegocio
         {
             return CP.Actualizar(id);
         }
-        public bool eliminar_zapatos(ClaseEntidad id)
+        public bool eliminar_zapatos(int id)
         {
             return CP.eliminar_zapato(id);
         }

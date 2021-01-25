@@ -14,7 +14,7 @@ namespace cDatos
         {
             try
             {
-                SqlConnection oconectar = new SqlConnection(ConfigurationSettings.AppSettings[conexion].ToString());
+                SqlConnection oconectar = new SqlConnection(ConfigurationManager.ConnectionStrings[conexion].ConnectionString);
                 oconectar.Open();
                 return oconectar;
             }
@@ -23,5 +23,7 @@ namespace cDatos
                 throw new Exception(error.Message);
             }
         }
+
+
     }
 }

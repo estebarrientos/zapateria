@@ -19,10 +19,8 @@ namespace cDatos
         {
             try
             {
+                SqlCommand ocmd = new SqlCommand("agregar_zapatos", oconexion.conectar("conexionBD"));
                 ocmd.CommandType = CommandType.StoredProcedure;
-                ocmd.Connection = oconexion.conectar("bdZapateria");
-                ocmd.CommandText = "agregar_zapatos";
-
                 ocmd.Parameters.Add("@marca", oZapato.Marca);
                 ocmd.Parameters.Add("@tipo", oZapato.Tipo);
                 ocmd.Parameters.Add("@genero", oZapato.Genero);
@@ -38,10 +36,10 @@ namespace cDatos
             }
         }
 
-        SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["bdZapateria"].ConnectionString);
+       
         public DataTable D_zapatos()
         {
-            SqlCommand cmd = new SqlCommand("listar_zapatos", cn);
+            SqlCommand cmd = new SqlCommand("listar_zapatos", oconexion.conectar("conexionBD"));
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -52,15 +50,13 @@ namespace cDatos
         ClaseConexion oconexion2 = new ClaseConexion();
         SqlCommand ocmd2 = new SqlCommand();
 
-        public bool eliminar_zapato(ClaseEntidad oZapato2)
+        public bool eliminar_zapato(int id)
         {
             try
             {
+                SqlCommand ocmd2 = new SqlCommand("eliminar_zapatos", oconexion.conectar("conexionBD"));
                 ocmd2.CommandType = CommandType.StoredProcedure;
-                ocmd2.Connection = oconexion2.conectar("bdZapateria");
-                ocmd.CommandText = "eliminar_zapatos";
-
-                ocmd2.Parameters.Add("id", oZapato2.Id);
+                ocmd2.Parameters.Add("id", id);
                 ocmd2.ExecuteNonQuery();
                 return true;
             }
@@ -70,14 +66,19 @@ namespace cDatos
             }
         }
 
-        public bool Actualizar(ClaseEntidad id)
+        public bool Actualizar(ClaseEntidad oZapato)
         {
             try
             {
+                SqlCommand ocmd = new SqlCommand("actualizar_zapatos", oconexion.conectar("conexionBD"));
                 ocmd.CommandType = CommandType.StoredProcedure;
-                ocmd.Connection = oconexion.conectar("bdZapateria");
-                ocmd.CommandText = "actualizar_zapatos";
-                ocmd.Parameters.Add("@id",id.Id);
+                ocmd.Parameters.Add("@id", oZapato.Id);
+                ocmd.Parameters.Add("@marca", oZapato.Marca);
+                ocmd.Parameters.Add("@tipo", oZapato.Tipo);
+                ocmd.Parameters.Add("@genero", oZapato.Genero);
+                ocmd.Parameters.Add("@cantidad_disponible", oZapato.Cantidad_disponible);
+                ocmd.Parameters.Add("@precio", oZapato.Precio);
+
                 ocmd.ExecuteNonQuery();
                 return true;
             }
@@ -89,6 +90,8 @@ namespace cDatos
             }
 
         }
+
+
 
 
     }

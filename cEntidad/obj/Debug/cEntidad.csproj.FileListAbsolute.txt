@@ -3,3 +3,9 @@ C:\Users\esteb\source\repos\cEntidad\bin\Debug\cEntidad.pdb
 C:\Users\esteb\source\repos\cEntidad\obj\Debug\cEntidad.csproj.CoreCompileInputs.cache
 C:\Users\esteb\source\repos\cEntidad\obj\Debug\cEntidad.dll
 C:\Users\esteb\source\repos\cEntidad\obj\Debug\cEntidad.pdb
+C:\xampp\.vs\htdocs\zapateria\cEntidad\bin\Debug\cEntidad.dll
+C:\xampp\.vs\htdocs\zapateria\cEntidad\bin\Debug\cEntidad.pdb
+C:\xampp\.vs\htdocs\zapateria\cEntidad\obj\Debug\cEntidad.csprojAssemblyReference.cache
+C:\xampp\.vs\htdocs\zapateria\cEntidad\obj\Debug\cEntidad.csproj.CoreCompileInputs.cache
+C:\xampp\.vs\htdocs\zapateria\cEntidad\obj\Debug\cEntidad.dll
+C:\xampp\.vs\htdocs\zapateria\cEntidad\obj\Debug\cEntidad.pdb
