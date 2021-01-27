@@ -37,16 +37,16 @@
             </div>
             <div class="row mt-4 justify-content-center">
                 <div class="col-md-2">
-                    <h5 class="text-center mb-5"><i class="bi bi-heart-fill"></i> Id:</h5>
+                    <h5 class="text-center mb-4"><i class="bi bi-heart-fill"></i> Id:</h5>
                     <h5 class="text-center mb-4"><i class="bi bi-heart-fill"></i> Marca:</h5>
                     <h5 class="text-center mb-4"><i class="bi bi-heart-fill"></i> Tipo:</h5>
                     <h5 class="text-center mb-4"><i class="bi bi-heart-fill"></i> Genero:</h5>
                     <h5 class="text-center mb-4"><i class="bi bi-heart-fill"></i> Cantidad:</h5>
                     <h5 class="text-center"><i class="bi bi-heart-fill"></i> Precio:</h5>
                 </div>
-                <div class="col-md-2 mb-1">
-                    <asp:TextBox ID="txtId" runat="server" TextMode="Number" CssClass="mb-4 col-12 form-control" placeholder="Ingrese el id"></asp:TextBox>
-                    <asp:TextBox ID="txtMarca" runat="server" CssClass="mb-3 col-12 form-control mt-3" placeholder="ingrese la marca"></asp:TextBox>
+                <div class="col-md-2">
+                    <asp:TextBox ID="txtId" runat="server" TextMode="Number" CssClass="mb-2 col-12 form-control" placeholder="Ingrese el id"></asp:TextBox>
+                    <asp:TextBox ID="txtMarca" runat="server" CssClass="mb-2 col-12 form-control" placeholder="ingrese la marca"></asp:TextBox>
                     <asp:DropDownList ID="listadoTipo" runat="server" CssClass="form-select">
                         <asp:ListItem>Deportivo</asp:ListItem>
                         <asp:ListItem>Botas</asp:ListItem>
@@ -56,7 +56,7 @@
                         <asp:ListItem>Scarpines</asp:ListItem>
                         <asp:ListItem>Mocasin</asp:ListItem>
                     </asp:DropDownList>
-                    <asp:DropDownList ID="opcionGenero" runat="server" CssClass="form-select mb-3 mt-2">
+                    <asp:DropDownList ID="opcionGenero" runat="server" CssClass="form-select mb-2 mt-3">
                         <asp:ListItem Value="1">Masculino</asp:ListItem>
                         <asp:ListItem Value="2">Femenino</asp:ListItem>
                     </asp:DropDownList>
